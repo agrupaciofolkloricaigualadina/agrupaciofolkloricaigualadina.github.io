@@ -4,6 +4,7 @@ title: Història
 permalink: /història/
 ---
 
+## Història de l'Agrupació Folklòrica Igualadina (1940-2025)
 L'any 1940 Maria Concepció Puig fundà l’Agrupació Folklòrica Igualadina iniciant així es seu camí en el món de la cultura popular i tradicional del Països Catalans. Intentar amb aquesta iniciativa, mostrar a la gent del nostre país, de l’estat Espanyol i de fronteres enllà, com és la nostra dansa.
 
 Els primers anys, la il·lusió era el que impulsava aquest grup malgrat que les comoditats no estaven precisament a l’ordre del dia. El 1955 es fa una sortida a Montserrat , lloc on es produeix el 1er. contacte amb l'Esbart de Rubí, fet que va provocar un canvi en el fer de l'AFI. 1958, es va a Madrid per tal de ballar a Televisió Espanyola. El 1961, els dansaires es traslladen a Canàries contractats per l’agrupació i descans, el 1964 participa en la Sarsuela Cançó d’Amor i Guerra a Torre la Vega, i el 68, s'organitza el viatge per anar a Amberes per a participar en l'Europeada. Entre el 1970 i el 1980 no es para, l'AFI viatge a Monforte de Lemos i Madrid novament , on participa en la Demostración Sindical i en la Sarsuela Bohemios, escenificada al Santiago Bernabeu. Es viatja a Mallorca i a Banyeres de Bigorra (França). El 1974, es participa en el xv Certamen Folklòric Internacional a Santander.
