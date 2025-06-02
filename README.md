@@ -5,7 +5,8 @@ Aquesta pàgina web és un projecte de l'agrupació folklòrica igualadina que p
 
 # Instal·lació i execució en local
 ## Windows
-Per poder executar aquest projecte en local, cal tenir `git` instal·lat al sistema. Si no el tens, pots descarregar-lo des de [aquí](https://git-scm.com/downloads).
+### Git
+Per poder executar aquest projecte en local, cal tenir `git` instal·lat al sistema. Si no el tens, pots descarregar-lo des de [aquí](https://git-scm.com/downloads). Git es pot utilitzar a través de la terminal o a través de [GitHub Desktop](https://desktop.github.com/).
 
 Un cop tinguis `git` instal·lat, obre una terminal i executa les següents ordres per clonar el repositori i instal·lar les dependències:
 
@@ -21,12 +22,16 @@ Després, accedeix al directori del projecte:
 cd agrupaciofolkloricaigualadina
 ```
 
-Aquest projecte utilitza `jekyll` per generar la pàgina web. Per instal·lar-lo, cal tenir instal·lats `ruby` i `bundler`. Es poden instal·lar des de [rubyinstaller.org](https://rubyinstaller.org/downloads/) o mitjançant el gestor de paquets `chocolatey`. Després, instal·lem `jekyll` i `bundler` a través de la terminal:
+### Ruby i Jekyll
+Aquest projecte utilitza `jekyll` per generar la pàgina web. Per instal·lar-lo, cal tenir instal·lats `ruby` i `bundler`. Es poden instal·lar des de [rubyinstaller.org](https://rubyinstaller.org/downloads/) o mitjançant el gestor de paquets `chocolatey`. Aleshores, cal afegir `ruby` al PATH del sistema.
+
+Finalment, cal instal·lar `jekyll` i `bundler` a través de la terminal:
 
 ```bash
 gem install jekyll bundler
 ```
 
+### Executar el projecte
 Per executar el projecte, cal instal·lar les dependències i executar el servidor de desenvolupament:
 
 ```bash
@@ -76,7 +81,7 @@ Per pujar els canvis al repositori, cal fer:
 
 ```bash
 git add .
-git commit -m "Missatge del commit"
+git commit -m "Resum dels canvis fets"
 git push origin main
 ```
 
