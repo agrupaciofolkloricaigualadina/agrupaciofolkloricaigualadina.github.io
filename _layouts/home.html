@@ -1,32 +1,166 @@
 ---
 layout: default
+hide_banner: false
 ---
 
-<div class="home">
-  {%- if page.title -%}
-    <h1 class="page-heading">{{ page.title }}</h1>
-  {%- endif -%}
+<div class="home-page">
+    <!-- Main Introduction Section -->
+    <div class="content-section fade-in-up">
+        {{ content }} {% if site.posts.size > 0 %}
+    </div>
+    <!-- Recent News Section -->
+    <div class="content-section">
+        <h2>📰 Notícies i Activitats Recents</h2>
+        <p>
+            Mantingueu-vos al dia amb les nostres últimes actuacions,
+            esdeveniments i novetats de l'agrupació.
+        </p>
 
-  {{ content }}
+        <ul class="posts-list">
+            {% for post in site.posts limit:4 %}
+            <li
+                class="post-item slide-in-left"
+                style="animation-delay: {{ forloop.index | times: 0.1 }}s;"
+            >
+                <img
+                    src="/assets/images/logo_afi.jpg"
+                    alt="{{ post.title }}"
+                    class="post-image"
+                />
+                <div class="post-date">{{ post.date | date: "%d/%m/%Y" }}</div>
+                <h3 class="post-title">
+                    <a href="{{ post.url | relative_url }}"
+                        >{{ post.title | escape }}</a
+                    >
+                </h3>
+                {% if post.excerpt %}
+                <div class="post-excerpt">
+                    {{ post.excerpt | strip_html | truncate: 150 }}
+                </div>
+                {% endif %}
+                <a href="{{ post.url | relative_url }}" class="btn btn-light"
+                    >Llegir més</a
+                >
+            </li>
+            {% endfor %}
+        </ul>
 
-  {%- if site.posts.size > 0 -%}
-    <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
-    <ul class="post-list">
-      {%- for post in site.posts -%}
-      <li>
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-        </h3>
-        {%- if site.show_excerpts -%}
-          {{ post.excerpt }}
-        {%- endif -%}
-      </li>
-      {%- endfor -%}
-    </ul>
-  {%- endif -%}
+        {% if site.posts.size > 4 %}
+        <div class="text-center" style="margin-top: 2rem">
+            <a href="/blog" class="btn btn-secondary"
+                >Veure totes les notícies</a
+            >
+        </div>
+        {% endif %}
+    </div>
+    {% endif %}
 
+    <!-- Image Gallery Preview -->
+    <div class="content-section">
+        <h2>📸 Galeria d'Imatges</h2>
+        <p>Alguns moments destacats de les nostres actuacions i activitats.</p>
+
+        <div class="image-gallery">
+            <div class="gallery-item">
+                <img src="/assets/images/logo_afi.jpg" alt="Ballada a Maians" />
+                <div class="caption">
+                    Ballada a Maians - Grup de petits, mitjans i juvenils
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img
+                    src="/assets/images/logo_afi.jpg"
+                    alt="Espectacle Les 4 Estacions"
+                />
+                <div class="caption">
+                    Espectacle "Les 4 Estacions" - 83è aniversari
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img
+                    src="/assets/images/logo_afi.jpg"
+                    alt="Festa Major d'Igualada"
+                />
+                <div class="caption">
+                    Festa Major d'Igualada - Cercavila tradicional
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="/assets/images/logo_afi.jpg" alt="Roda d'Esbarts" />
+                <div class="caption">
+                    Roda d'Esbarts - Trobada de grups de dansa
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center" style="margin-top: 2rem">
+            <a href="/galeria" class="btn btn-secondary"
+                >Veure tota la galeria</a
+            >
+        </div>
+    </div>
+
+    <!-- Contact CTA -->
+    <div class="content-section text-center">
+        <h2>💌 Vols formar part de la família AFI?</h2>
+        <p>
+            Si tens ganes de ballar i descobrir les danses tradicionals
+            catalanes, no dubtis a contactar amb nosaltres. T'esperem amb els
+            braços oberts!
+        </p>
+
+        <div class="grid-2" style="margin-top: 2rem">
+            <div>
+                <img
+                    src="/assets/images/logo_afi.jpg"
+                    alt="Contacta amb l'Agrupació Folklòrica Igualadina"
+                    class="section-image"
+                />
+            </div>
+            <div
+                style="
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                "
+            >
+                <p><strong>📧 Correu electrònic:</strong> {{ site.email }}</p>
+                <p>
+                    <strong>📱 Instagram:</strong> @{{ site.instagram_username
+                    }}
+                </p>
+                <p><strong>📍 Ubicació:</strong> Igualada, Catalunya</p>
+                <div style="margin-top: 2rem">
+                    <a href="/contacte" class="btn btn-primary"
+                        >Contacta amb nosaltres</a
+                    >
+                    <a href="/calendari" class="btn btn-secondary"
+                        >Consulta els horaris</a
+                    >
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+<script>
+    // Add staggered animation delays to grid items
+    document.addEventListener("DOMContentLoaded", function () {
+        const gridItems = document.querySelectorAll(".grid-2 > *, .grid-3 > *");
+        gridItems.forEach((item, index) => {
+            item.style.animationDelay = `${index * 0.1}s`;
+        });
+
+        // Add hover effects to gallery items
+        const galleryItems = document.querySelectorAll(".gallery-item");
+        galleryItems.forEach((item) => {
+            item.addEventListener("mouseenter", function () {
+                this.style.transform = "scale(1.02) translateY(-5px)";
+            });
+
+            item.addEventListener("mouseleave", function () {
+                this.style.transform = "scale(1) translateY(0)";
+            });
+        });
+    });
+</script>

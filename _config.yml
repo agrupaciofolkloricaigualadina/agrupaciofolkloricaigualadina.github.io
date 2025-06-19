@@ -29,9 +29,32 @@ instagram_username: afi
 github_username:  afi
 
 # Build settings
-theme: minima
 plugins:
   - jekyll-feed
+
+# Custom theme settings
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Collections
+collections:
+  pages:
+    output: true
+    permalink: /:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
 
 # Exclude from processing.
 # The following items will not be processed, by default.
