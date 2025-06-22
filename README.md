@@ -5,7 +5,7 @@ Lloc web oficial de l'Agrupació Folklòrica Igualadina, entitat dedicada a pres
 ## 🌐 Estructura del lloc web
 
 ```mermaid
-graph TD
+graph LR
     A[🏠 Inici /] --> B[📚 Història /història]
     A --> C[🎭 Espectacles /espectacles]
     A --> D[🎓 Escola de Dansa /escola-de-dansa]
@@ -154,6 +154,18 @@ Actualment, totes les imatges utilitzen `logo_afi.jpg` com a placeholder. Per af
    - Thumbnails: 120x80px
 
 ## 🛠️ Desenvolupament local
+Primerament, cal tenir `git` instal·lat. Aleshores, també cal `ruby` per executar la applicació.
+
+A través de `ruby` instal·lar:
+```bash
+# Windows
+gem install bundler
+
+# Arch linux
+sudo pacman -S ruby-bundler
+```
+
+Aleshores, clonem el repositori amb `git`, i executem:
 
 ```bash
 # Instal·lar dependències
@@ -162,11 +174,11 @@ bundle install
 # Construir el lloc
 bundle exec jekyll build
 
-# Servir localment
+# Executar localment
 bundle exec jekyll serve
 ```
 
-El lloc estará disponible a `http://localhost:4000`
+El lloc estará disponible a `http://127.0.0.1:4000`
 
 ## 📝 Configuració
 
@@ -176,12 +188,13 @@ Els paràmetres principals es poden modificar a `_config.yml`:
 title: Agrupació Folklòrica Igualadina
 email: info@agrupaciofolkloricaigualadina.cat
 description: >-
-  L'agrupació Folklòrica Igualadina és una entitat de dansa tradicional 
-  igualadina que propaga la cultura popular i tradicional des de 1940.
+  L'agrupació Folklòrica Igualadina és una entitat de dansa tradicional igualadina que propaga la cultura popular i tradicional des de 1940.
+baseurl: ""
 url: ""
-twitter_username: afi
-instagram_username: afi
-github_username: afi
+twitter_username: folkloricaIGD
+instagram_username: agrup.folklorica.igualadina
+github_username: agrupaciofolkloricaigualadina
+tiktok_username: afigualadina
 ```
 
 ## 🎯 Pròximes funcionalitats
@@ -192,6 +205,7 @@ github_username: afi
 - [ ] Multiidioma (català/castellà)
 - [ ] Integració amb calendari Google
 - [ ] Newsletter automatitzat
+- [ ] Integració amb Google Firebase i Google Analytics
 
 ---
 
